@@ -1,0 +1,21 @@
+GET http://localhost:5001/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJKdW5pbmRpIiwiZW1haWwiOiJmZXJ0YTIzQGdtYWlsLmNvbSIsImlhdCI6MTczMzczNTQ2OSwiZXhwIjoxNzMzNzM2NDY5fQ.VyCI9c__Kf1t3qS87Vs9rJ59aPAeyYZXclPU53C6o_A
+###
+POST  http://localhost:5001/users
+Content-Type: application/json
+
+{
+    "name" : "Junindi",
+    "email" : "ferta23@gmail.com",
+    "password" : "ferta123",
+    "confPassword" : "ferta123"
+}
+Z
+###
+POST  http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "email" : "ferta23@gmail.com",
+    "password" : "ferta123"
+}
