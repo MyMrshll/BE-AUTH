@@ -87,4 +87,11 @@ const login = async (req, res) => {
     res.status(404).json({ msg: "Email not found" });
   }
 };
-module.exports = { getUser, Register, login };
+
+
+const logout = async (req, res) => {
+  const authHeaderr = req.headers["authorization"];
+  res.json(authHeaderr)
+  
+}
+module.exports = { getUser, Register, login, logout };
