@@ -8,7 +8,7 @@ const getUser = async (req, res) => {
     });
     res.json(users);
   } catch (error) {
-    console / log(error);
+    console.log(error);
   }
 };
 
@@ -54,7 +54,7 @@ const login = async (req, res) => {
       { userId, name, email },
       process.env.ACCESS_TOKEN_SECRET,
       {
-        expiresIn: "1000s",
+        expiresIn: "60s",
       }
     );
     
@@ -90,8 +90,21 @@ const login = async (req, res) => {
 
 
 const logout = async (req, res) => {
-  const authHeaderr = req.headers["authorization"];
-  res.json(authHeaderr)
-  
+  const refreshToken = req.cookies.refreshToken;
+  const user = await Users.findAll({
+    where: {
+      refresh_token: refreshToken,
+    }
+  })
+  const userId = user[0].id;
+  await Users.update({
+    refresh_token: null,
+  }, {
+    where: {
+      id: userId
+    }
+  });
+  res.clearCookie("refreshToken");
+  res.status(200).json({ msg: "Logout Success"});
 }
 module.exports = { getUser, Register, login, logout };

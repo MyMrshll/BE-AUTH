@@ -1,5 +1,5 @@
 GET http://localhost:5001/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJKdW5pbmRpIiwiZW1haWwiOiJmZXJ0YTIzQGdtYWlsLmNvbSIsImlhdCI6MTczMzc5OTAzOSwiZXhwIjoxNzMzODAwMDM5fQ.jktulZrBhx387Ek7TF0suEcwpI-pst82VrQNHvMZpnE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJKdW5pbmRpIiwiZW1haWwiOiJmZXJ0YTIzQGdtYWlsLmNvbSIsImlhdCI6MTczMzk5MDM0NCwiZXhwIjoxNzMzOTkwNDA0fQ.t2h58rUYI8wBTTYoFHzXUHosj37gZAOgjsF5wlkBajc
 ###
 POST  http://localhost:5001/users
 Content-Type: application/json
@@ -10,7 +10,7 @@ Content-Type: application/json
     "password" : "ferta123",
     "confPassword" : "ferta123"
 }
-Z
+
 ###
 POST  http://localhost:5001/login
 Content-Type: application/json
@@ -19,6 +19,10 @@ Content-Type: application/json
     "email" : "ferta23@gmail.com",
     "password" : "ferta123"
 }
+
+###
+POST  http://localhost:5001/token
+
 ###
 DELETE  http://localhost:5001/logout
 

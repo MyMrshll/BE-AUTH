@@ -14,6 +14,7 @@ const cookieParser = require('cookie-parser');
 // } catch (error) {
 //     console.log(error)
 // }
+app.use(cookieParser());
 // Middleware
 app.use(log);
 // CORS AND JSON HANDLER
