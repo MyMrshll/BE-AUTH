@@ -7,13 +7,13 @@ const Users = require('./src/models/UserModel');
 const router = require('./src/routes/Route');
 const log = require('./src/middleware/log');
 const cookieParser = require('cookie-parser');
-// try {
-//     db.authenticate();
-//     console.log('Database connected successfully')
-//     Users.sync();
-// } catch (error) {
-//     console.log(error)
-// }
+try {
+    db.authenticate();
+    console.log('Database connected successfully')
+    Users.sync();
+} catch (error) {
+    console.log(error)
+}
 app.use(cookieParser());
 // Middleware
 app.use(log);
