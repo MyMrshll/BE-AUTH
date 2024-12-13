@@ -26,7 +26,7 @@ app.use(router)
 
 
 // Server Listem
-const port = 5001
+const port = 5000 || process.env.PORT
 app.listen(port, () => {
     console.log(`Server is running on port http://localhost:${port}`)
 })
